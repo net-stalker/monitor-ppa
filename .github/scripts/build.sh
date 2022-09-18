@@ -34,6 +34,7 @@ gzip -k -f Packages
 
 echo "::info::Creating the Release, Release.gpg and InRelease files"
 apt-ftparchive release . >Release
+cat Release
 echo "::info:: $(cat $Release)"
 ls
 
