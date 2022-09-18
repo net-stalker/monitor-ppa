@@ -6,7 +6,7 @@ EMAIL=dmytro.shcherbatiuk@netstalker.io
 #GPG_PASSPHRASE=Scherb@tyuk1986
 GITHUB_USERNAME=net-stalker
 
-export GPG_TTY=`tty`
+export GPG_TTY=$(tty)
 
 assert_non_empty() {
   name=$1
@@ -38,7 +38,9 @@ apt-ftparchive release . >Release
 echo -e "::debug:: Print Release file $(cat Release)"
 
 gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback -abs -o - Release >Release.gpg
-#gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
+echo -e "::debug:: Print Release.gpg file $(cat Release.gpg)"
+gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign --pinentry-mode loopback -o - Release >InRelease
+echo -e "::debug:: Print InRelease file $(cat InRelease)"
 
 echo "::info::Creating the $GITHUB_USERNAME.list file"
 echo "deb https://$GITHUB_USERNAME.github.io/monitor-ppa ./" >$GITHUB_USERNAME.list
