@@ -30,6 +30,7 @@ gpg --armor --export "$EMAIL" >./KEY.gpg
 
 echo "::info::Creating the Packages and Packages.gz files"
 dpkg-scanpackages --multiversion . >Packages
+echo "::info:: $(cat $Packages)"
 gzip -k -f Packages
 
 echo "::info::Creating the Release, Release.gpg and InRelease files"
