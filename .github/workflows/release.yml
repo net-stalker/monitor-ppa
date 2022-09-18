@@ -37,6 +37,8 @@ jobs:
         env:
           GPG_PRIVATE_KEY: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.PPA_GPG_PASSPHRASE }}
+          GITHUB_USERNAME: net-stalker
+          EMAIL: dmytro.shcherbatiuk@netstalker.io
 
       #      - name: Upload binary to release
       #        uses: svenstaro/upload-release-action@v2
