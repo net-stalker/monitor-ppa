@@ -6,7 +6,7 @@ EMAIL=dmytro.shcherbatiuk@netstalker.io
 #GPG_PASSPHRASE=Scherb@tyuk1986
 GITHUB_USERNAME=net-stalker
 
-export GPG_TTY=$(tty)
+export GPG_TTY=`tty`
 
 assert_non_empty() {
   name=$1
