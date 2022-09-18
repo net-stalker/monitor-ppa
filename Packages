@@ -1,0 +1,16 @@
+Package: exampleapplication
+Version: 1.0.0
+Architecture: amd64
+Installed-Size: 504629
+Depends: libpcap-dev, libzmq3-dev
+Filename: ./monitor_1.0.0_amd64.deb
+Size: 231206
+MD5sum: bcd764d1978876ea7bba80f4bfa88aec
+SHA1: c0161c69a79756c713ea86736f89d7d825b8afcc
+SHA256: e64c336fa1b6308dfb1571fbabe75afe1e62e8787ed334855d1a9a227f96bd06
+Description: An example application.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+ eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut
+ enim ad minim veniam, quis nostrud exercitation ullamco laboris
+ nisi ut aliquip ex ea commodo consequat.
+

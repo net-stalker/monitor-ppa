@@ -1,0 +1,32 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Sun, 18 Sep 2022 15:12:36 +0000
+MD5Sum:
+ 4d7977e57534a1bfea6384f275867b9c              605 Packages
+ d665132b5807b34745f804279fbeb4d7              439 Packages.gz
+ 3bb73fa4d358f2efe98086cb8b0139ef               38 Release
+SHA1:
+ cf832fdc07df997dad651e93f54c105deca15f8b              605 Packages
+ 287371acda983756d0af583b557fc44a7cafaf7b              439 Packages.gz
+ a3de72d6351bef4e927eee3c6f142676ee31c9fd               38 Release
+SHA256:
+ 8a0daffa43c747cafcf29bbacf96db7e962e85a459f6673d6515bf51ff52839d              605 Packages
+ b2e9656132671c05282770a6535d6adfbc9bb1afb3260faf8e051b0c48481a1a              439 Packages.gz
+ cdefa0a384a4a8255661398e2cd84a2ed86509ae7b0ef49cc97ec1b58f87c51a               38 Release
+SHA512:
+ 9999493ebfbfa1bbcf0a969754b89ca78c52e9cf8126a85306452a19a9bfba69dd3a5a44310820db56bc110b861da6a239ce107a5cc2c90a71672187fe20c343              605 Packages
+ 836913822dea7365578c0656a26cb3edd600b713ff8b7169300126935321821c3038c34d013daae9f8eaab84e1c3a5dee6d99bcef1629ce0ad2e11b2606d64b5              439 Packages.gz
+ bb128a8110964d81e8974b3368de35c204cfb090a8559dacf0e3a419e72b607b7625ee01ae3b435d5f9e176ec7fc2057ebc9364d88bc4e7b5f67fdc8c730d4c9               38 Release
+-----BEGIN PGP SIGNATURE-----
+
+iQFWBAEBCgBAFiEEVGz1pB3aOSBcOas/dCUpnrPGK0IFAmMnNWUiHGRteXRyby5z
+aGNoZXJiYXRpdWtAbmV0c3RhbGtlci5pbwAKCRB0JSmes8YrQhklB/9+k1ACK51g
+X8+WhNDNVIkdz7hij1Z0B2q2IC0LRcjatOYsRJzpwbUJp/+U4Ykm6QBcJWHCUgVI
+KCpEHS9xrV+ZLuvQhDYm3gzCBreZ0taNP0JTunQKg11B2GXylNmNUE2Xb3UkveV+
+wOCeSDaWMybrnUHreHhrtuXLlGyvny0Kl4P+fa89PKXWT+SOL8j1Ii3Qje5/LzXb
+pQXjc9HixIm+BpTMM6GuVqdTY6RytfOCPdBlGpoxFPTDQO4T9XjS4YMlefKlDR13
++Lp692e5QHm+fn6M7ckSVgksZmMcvf6hQ6Sw+n/p9PgI6phLBf13f/etf/iaTBjm
+/v71d5rw8l0v
+=MvNN
+-----END PGP SIGNATURE-----
