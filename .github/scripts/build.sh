@@ -32,10 +32,12 @@ gzip -k -f Packages
 
 echo "::info::Creating the Release, Release.gpg and InRelease files"
 apt-ftparchive release . >Release
-gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" -abs -o - Release >Release.gpg
-gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
+echo "::info:: $(cat $Release)"
 
-echo "::info::Creating the my_list_file.list file"
+gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" -abs -o - Release >Release.gpg
+gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
+
+echo "::info::Creating the $GITHUB_USERNAME.list file"
 echo "deb https://$GITHUB_USERNAME.github.io/monitor-ppa ./" >$GITHUB_USERNAME.list
 
 echo "::info::Commit and push to GitHub and your PPA is ready to go:"
