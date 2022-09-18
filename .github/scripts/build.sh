@@ -37,7 +37,7 @@ echo "::info::Creating the Release, Release.gpg and InRelease files"
 apt-ftparchive release . >Release
 echo -e "::debug:: Print Release file $(cat Release)"
 
-gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" -abs -o - Release >Release.gpg
+gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback -abs -o - Release >Release.gpg
 #gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
 
 echo "::info::Creating the $GITHUB_USERNAME.list file"
