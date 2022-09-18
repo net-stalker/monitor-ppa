@@ -30,7 +30,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Update platform
-        run: sudo apt-get update && sudo apt-get install gnupg apt-utils
+        run: sudo apt-get update && sudo apt-get install gnupg
       - name: Create PPA repo
         run: ./.github/scripts/build.sh
         shell: bash
