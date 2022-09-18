@@ -1,13 +1,13 @@
-Package: net-monitor
+Package: netmonitor
 Version: 0.1.0
 Architecture: amd64
-Installed-Size: 497730
+Installed-Size: 497729
 Depends: libpcap-dev, libzmq3-dev
 Filename: ./netmonitor_0.1.0_amd64.deb
-Size: 227604
-MD5sum: 61689de03baba237de05000f1cd83a47
-SHA1: 399e1581414a6f00137adef53dcc0651436d003e
-SHA256: 48c9a86c93f8ef850f7d11621c9ac97217bf96222fda7c5f502cec111b49961c
+Size: 227608
+MD5sum: a16062acb456e291512ee17385d249e6
+SHA1: be04fe93cb763af0ac804fb68ee5e51294e12aa0
+SHA256: e83172adb7259deab9d81226183598973b130ad824ea482dd155b643ae322a04
 Description: An example application.
  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut
