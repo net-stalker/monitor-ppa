@@ -14,3 +14,19 @@ Description: An example application.
  enim ad minim veniam, quis nostrud exercitation ullamco laboris
  nisi ut aliquip ex ea commodo consequat.
 
+Package: net-monitor
+Version: 0.1.0
+Architecture: amd64
+Installed-Size: 497730
+Depends: libpcap-dev, libzmq3-dev
+Filename: ./netmonitor_0.1.0_amd64.deb
+Size: 227604
+MD5sum: 61689de03baba237de05000f1cd83a47
+SHA1: 399e1581414a6f00137adef53dcc0651436d003e
+SHA256: 48c9a86c93f8ef850f7d11621c9ac97217bf96222fda7c5f502cec111b49961c
+Description: An example application.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+ eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut
+ enim ad minim veniam, quis nostrud exercitation ullamco laboris
+ nisi ut aliquip ex ea commodo consequat.
+
