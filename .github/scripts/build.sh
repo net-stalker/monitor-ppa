@@ -34,6 +34,7 @@ echo "::info::Creating the Release, Release.gpg and InRelease files"
 apt-ftparchive release . >Release
 echo "::info:: $(cat $Release)"
 
+export GPG_TTY=$(tty)
 gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" -abs -o - Release >Release.gpg
 gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
 
