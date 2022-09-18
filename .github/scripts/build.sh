@@ -30,21 +30,23 @@ gpg --armor --export "$EMAIL" >./KEY.gpg
 
 echo "::info::Creating the Packages and Packages.gz files"
 dpkg-scanpackages --multiversion . >Packages
-echo -e "::debug:: Print Packages file\n$(cat Packages)"
+echo -e "::debug:: Print Packages file $(cat Packages)"
 gzip -k -f Packages
 
 echo "::info::Creating the Release, Release.gpg and InRelease files"
 apt-ftparchive release . >Release
-echo -e "::debug:: Print Release file\n$(cat Release)"
-ls
+echo -e "::debug:: Print Release file $(cat Release)"
 
 gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" -abs -o - Release >Release.gpg
-gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
+#gpg --no-tty --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign -o - Release >InRelease
 
 echo "::info::Creating the $GITHUB_USERNAME.list file"
 echo "deb https://$GITHUB_USERNAME.github.io/monitor-ppa ./" >$GITHUB_USERNAME.list
+echo -e "::debug:: Print $GITHUB_USERNAME.list file $(cat $GITHUB_USERNAME.list)"
 
-echo "::info::Commit and push to GitHub and your PPA is ready to go:"
-git add -A
-git commit -m "add ppa repo"
-git push -u origin main
+ls
+
+#echo "::info::Commit and push to GitHub and your PPA is ready to go:"
+#git add -A
+#git commit -m "add ppa repo"
+#git push -u origin main
