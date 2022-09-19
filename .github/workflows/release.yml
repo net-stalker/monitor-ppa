@@ -19,8 +19,3 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.PPA_GPG_PASSPHRASE }}
           GITHUB_USERNAME: net-stalker
           EMAIL: dmytro.shcherbatiuk@netstalker.io
-
-      - name: Uploading packages to PPA
-        run: |
-          sudo apt-get install -y dput
-          dput ppa:dshcherbatiuk/netstalker .
