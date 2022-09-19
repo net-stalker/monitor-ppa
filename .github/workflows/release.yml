@@ -21,4 +21,6 @@ jobs:
           EMAIL: dmytro.shcherbatiuk@netstalker.io
 
       - name: Uploading packages to PPA
-        run: dput ppa:dshcherbatiuk/netstalker .
+        run: |
+          sudo apt-get install -y dput
+          dput ppa:dshcherbatiuk/netstalker .
