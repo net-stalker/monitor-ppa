@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Create PPA repo
         run: ./.github/scripts/publish_packages.sh
         shell: bash
@@ -18,3 +19,6 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.PPA_GPG_PASSPHRASE }}
           GITHUB_USERNAME: net-stalker
           EMAIL: dmytro.shcherbatiuk@netstalker.io
+
+      - name: Uploading packages to PPA
+        run: dput ppa:dshcherbatiuk/netstalker .
