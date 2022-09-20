@@ -1,4 +1,4 @@
-name: Publish packages to PPA repository
+name: Publish Debian packages to PPA repository
 
 on: [ workflow_dispatch ]
 
