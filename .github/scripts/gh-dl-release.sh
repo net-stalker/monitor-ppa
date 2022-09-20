@@ -31,7 +31,7 @@
 GITHUB="https://api.github.com"
 
 function gh_curl() {
-  curl -H "Authorization: token $TOKEN" \
+  curl -v -H "Authorization: token $TOKEN" \
     -H "Accept: application/vnd.github.v3.raw" \
     $@
 }
@@ -40,7 +40,9 @@ parser=".assets | map(select(.name == \"$FILE\"))[0].id"
 if [ "$VERSION" = "latest" ]; then
   # Github should return the latest release first.
   echo "::info::Getting latest release from $REPO"
+
   gh_curl -s $GITHUB/repos/$REPO/releases/latest
+
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
   echo "::info::asset_id $asset_id"
 else
