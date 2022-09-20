@@ -43,6 +43,10 @@ if [ "$VERSION" = "latest" ]; then
 
   gh_curl -s $GITHUB/repos/$REPO/releases/latest
 
+curl -H "Authorization: token $TOKEN" \
+    -H "Accept: application/vnd.github.v3.raw" \
+    $GITHUB/repos/$REPO/releases/latest
+
 #  asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
 #  echo "::info::asset_id $asset_id"
 else
