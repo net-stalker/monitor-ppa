@@ -8,11 +8,11 @@ on:
         required: true
         default: 'latest'
       file:
-        description: 'Test scenario tags'
+        description: 'The file name of the distribution'
         required: true
         default: netmonitor_0.1.0_amd64.deb
       repo:
-        description: 'Repository name'
+        description: 'The repository name'
         required: true
         default: monitor
 
