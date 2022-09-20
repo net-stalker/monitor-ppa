@@ -18,7 +18,7 @@ jobs:
         run: ./.github/scripts/gh-dl-release.sh
         shell: bash
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: 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
           REPO: net-stalker/monitor
           FILE: netmonitor_0.1.0_amd64.deb
           VERSION: latest
