@@ -15,6 +15,7 @@ assert_non_empty() {
 
 assert_non_empty "GPG_PRIVATE_KEY" "$GPG_PRIVATE_KEY"
 assert_non_empty "GPG_PASSPHRASE" "$GPG_PASSPHRASE"
+assert_non_empty "EMAIL" "$EMAIL"
 
 echo "::info::Importing GPG private key"
 GPG_KEY_ID=$(echo "$GPG_PRIVATE_KEY" | gpg --import-options show-only --import | sed -n '2s/^\s*//p')

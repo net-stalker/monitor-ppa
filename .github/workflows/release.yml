@@ -11,8 +11,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Update platform
+        run: sudo apt-get update && sudo apt-get install curl wget jq
+
+      - name: Download Monitor Release
+        run: ./.github/scripts/gh-dl-release.sh
+        shell: bash
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: net-stalker/monitor
+          FILE: netmonitor_0.1.0_amd64.deb
+          VERSION: latest
+
       - name: Create PPA repo
-        run: ./.github/scripts/publish_packages.sh
+        run: ./.github/scripts/publish_packages_to_ppa.sh
         shell: bash
         env:
           GPG_PRIVATE_KEY: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
