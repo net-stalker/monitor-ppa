@@ -58,5 +58,4 @@ fi
 echo "::info::Downloading asset $FILE from $REPO"
 curl -v -sL -H "Authorization: token $TOKEN" \
   -H 'Accept: application/octet-stream' \
-  https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id \
-  >$FILE
+  https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id >$FILE
