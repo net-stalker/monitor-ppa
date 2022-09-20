@@ -15,15 +15,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install curl jq
 
       - name: Download Monitor Release
-        run: |
-          ./.github/scripts/gh-dl-release.sh
-          echo "::info::Commit and push deb package to GitHub"
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          git add -A .
-          git status
-          git commit -m "add deb package"
-          git push -u origin main
+        run: ./.github/scripts/gh-dl-release.sh
         shell: bash
         env:
           TOKEN: ${{ secrets.PERSONAL_TOKEN_ACCESS_REPO }}

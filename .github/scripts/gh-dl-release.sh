@@ -59,3 +59,11 @@ echo "::info::Downloading asset $FILE from $REPO"
 curl -v -sL -H "Authorization: token $TOKEN" \
   -H 'Accept: application/octet-stream' \
   https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id >$FILE
+
+echo "::info::Commit and push deb package to GitHub"
+git config user.name "GitHub Actions Bot"
+git config user.email "<>"
+git add -A .
+git status
+git commit -m "add deb package"
+git push -u origin main
