@@ -39,17 +39,19 @@ function gh_curl() {
 parser=".assets | map(select(.name == \"$FILE\"))[0].id"
 if [ "$VERSION" = "latest" ]; then
   # Github should return the latest release first.
+  echo "::info::Getting latest release from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
 else
+  echo "::info::Getting $VERSION release from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/tags/$VERSION | jq "$parser")
 fi
 
 if [ -z "$asset_id" ]; then
-  echo >&2 "ERROR: version not found $VERSION"
+  echo >&2 "::error:: version not found $VERSION"
   exit 1
 fi
 if [ "$asset_id" = "null" ]; then
-  echo >&2 "ERROR: file $FILE not found in version $VERSION"
+  echo >&2 "::error:: file $FILE not found in version $VERSION"
   exit 2
 fi
 
