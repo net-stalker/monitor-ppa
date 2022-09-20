@@ -41,7 +41,6 @@ if [ "$VERSION" = "latest" ]; then
   # Github should return the latest release first.
   echo "::info::Getting latest release from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
-  echo "::info::asset_id $asset_id"
 else
   echo "::info::Getting $VERSION release from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/tags/$VERSION | jq "$parser")
@@ -58,4 +57,4 @@ fi
 
 wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
   https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id \
-  -O $2
+  -O $FILE
