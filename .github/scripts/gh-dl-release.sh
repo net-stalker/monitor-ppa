@@ -56,8 +56,13 @@ if [ "$asset_id" = "null" ]; then
 fi
 
 echo "::info::Downloading asset $FILE from $REPO"
-wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
+curl -sL -H "Authorization: token $TOKEN" \
+  -H 'Accept: application/octet-stream' \
   https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id \
-  -O $FILE
+  >$FILE
+
+#wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
+#  https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id \
+#  -O $FILE
 
 ls -ag
