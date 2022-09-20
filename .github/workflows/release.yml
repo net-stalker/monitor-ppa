@@ -29,7 +29,7 @@ jobs:
           TOKEN: ${{ secrets.PERSONAL_TOKEN_ACCESS_REPO }}
           REPO: net-stalker/monitor
           FILE: netmonitor_0.1.0_amd64.deb
-          VERSION: latest
+          VERSION: ${{ github.event.inputs.tag }}
 
       - name: Create Debian PPA repo
         run: |
