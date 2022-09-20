@@ -30,8 +30,6 @@
 #VERSION="$1" # tag name or the word "latest"
 GITHUB="https://api.github.com"
 
-alias errcho='>&2 echo'
-
 function gh_curl() {
   curl -H "Authorization: token $TOKEN" \
     -H "Accept: application/vnd.github.v3.raw" \
@@ -47,11 +45,11 @@ else
 fi
 
 if [ -z "$asset_id" ]; then
-  errcho "ERROR: version not found $VERSION"
+  echo >&2 "ERROR: version not found $VERSION"
   exit 1
 fi
 if [ "$asset_id" = "null" ]; then
-  errcho "ERROR: file $FILE not found in version $VERSION"
+  echo >&2 "ERROR: file $FILE not found in version $VERSION"
   exit 2
 fi
 
