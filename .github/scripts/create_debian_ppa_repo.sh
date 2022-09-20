@@ -37,10 +37,3 @@ gpg --default-key "$EMAIL" --passphrase "$GPG_PASSPHRASE" --clearsign --pinentry
 
 echo "::info::Creating the $GITHUB_USERNAME.list file"
 echo "deb https://$GITHUB_USERNAME.github.io/monitor-ppa ./" >$GITHUB_USERNAME.list
-
-echo "::info::Commit and push to GitHub and your PPA is ready to go:"
-git config user.name "GitHub Actions Bot"
-git config user.email "<>"
-git add -A
-git commit -m "add ppa repo"
-git push -u origin main
