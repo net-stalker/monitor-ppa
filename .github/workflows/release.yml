@@ -1,6 +1,20 @@
 name: Publish Debian packages to PPA repository
 
-on: [ workflow_dispatch ]
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag'
+        required: true
+        default: 'latest'
+      file:
+        description: 'Test scenario tags'
+        required: true
+        default: netmonitor_0.1.0_amd64.deb
+      repo:
+        description: 'Repository name'
+        required: true
+        default: monitor
 
 jobs:
   release:
@@ -27,8 +41,8 @@ jobs:
         shell: bash
         env:
           TOKEN: ${{ secrets.PERSONAL_TOKEN_ACCESS_REPO }}
-          REPO: net-stalker/monitor
-          FILE: netmonitor_0.1.0_amd64.deb
+          REPO: net-stalker/${{ github.event.inputs.repo }}
+          FILE: ${{ github.event.inputs.file }}
           VERSION: ${{ github.event.inputs.tag }}
 
       - name: Create Debian PPA repo
