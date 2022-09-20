@@ -39,10 +39,10 @@ function gh_curl() {
 parser=".assets | map(select(.name == \"$FILE\"))[0].id"
 if [ "$VERSION" = "latest" ]; then
   # Github should return the latest release first.
-  echo "::info::Getting latest release from $REPO"
+  echo "::info::Getting latest release asset_id from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
 else
-  echo "::info::Getting $VERSION release from $REPO"
+  echo "::info::Getting $VERSION release asset_id from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/tags/$VERSION | jq "$parser")
 fi
 
@@ -55,6 +55,9 @@ if [ "$asset_id" = "null" ]; then
   exit 2
 fi
 
+echo "::info::Downloading asset $FILE from $REPO"
 wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
   https://$TOKEN:@api.github.com/repos/$REPO/releases/assets/$asset_id \
   -O $FILE
+
+ls -ag
