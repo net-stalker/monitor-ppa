@@ -31,7 +31,7 @@
 GITHUB="https://api.github.com"
 
 function gh_curl() {
-  curl -v -H "Authorization: token $TOKEN" \
+  curl -v -H "Authorization: token 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" \
     -H "Accept: application/vnd.github.v3.raw" \
     $@
 }
@@ -43,8 +43,8 @@ if [ "$VERSION" = "latest" ]; then
 
   gh_curl -s $GITHUB/repos/$REPO/releases/latest
 
-  asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
-  echo "::info::asset_id $asset_id"
+#  asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/latest | jq "$parser")
+#  echo "::info::asset_id $asset_id"
 else
   echo "::info::Getting $VERSION release from $REPO"
   asset_id=$(gh_curl -s $GITHUB/repos/$REPO/releases/tags/$VERSION | jq "$parser")
