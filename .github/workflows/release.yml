@@ -49,9 +49,10 @@ jobs:
         run: |
           ./.github/scripts/create_debian_ppa_repo.sh
           echo "::info::Commit and push to GitHub"
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          git add -A
+          git status
+#          git config user.name "GitHub Actions Bot"
+#          git config user.email "<>"
+        #          git add -A
         #          git commit -m "add debian ppa repo"
         #          git push -u origin main
         shell: bash
